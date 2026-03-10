@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Geist+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --base:  #f5f3ef;
+  --white: #ffffff;
+  --s1:    #f0ede8;
+  --s2:    #e8e4dd;
+  --s3:    #d8d3ca;
+  --t1:    #1a1624;
+  --t2:    #4a4558;
+  --t3:    #8a8499;
+  --t4:    #b8b3c4;
+  --vi:    #5b3fd4; --viL: #ede9fd;
+  --cr:    #966010; --crL: #fdf3e3;
+  --go:    #1a7048; --goL: #e6f7ef;
+  --er:    #b83228; --erL: #fdecea;
+  --wa:    #a85510; --waL: #fef3e2;
+  --bu:    #1a5898; --buL: #e8f2fc;
+}
+
+html, body { background: var(--base); color: var(--t1); }
+
+* { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: var(--s1); }
+::-webkit-scrollbar-thumb { background: var(--s3); border-radius: 4px; }
+
+@keyframes float-in {
+  from { opacity: 0; transform: translateY(13px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes breathe {
+  0%, 100% { opacity: 1; }
+  55%       { opacity: 0.22; }
+}
+@keyframes ping2 {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  70%  { transform: scale(2.3); opacity: 0;   }
+  100% { opacity: 0; }
+}
+@keyframes bar-grow { from { width: 0; } }
+@keyframes ticker {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes cursor-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+.animate-float-in  { animation: float-in .45s ease both; }
+.animate-breathe   { animation: breathe 1.8s ease infinite; }
+.animate-ping2     { animation: ping2 2s ease-out infinite; }
+.animate-ticker    { animation: ticker .35s ease both; }
+.animate-cursor    { animation: cursor-blink 1s step-start infinite; }
+
+.delay-1 { animation-delay: .05s; }
+.delay-2 { animation-delay: .10s; }
+.delay-3 { animation-delay: .15s; }
+.delay-4 { animation-delay: .20s; }
+.delay-5 { animation-delay: .25s; }
+.delay-6 { animation-delay: .30s; }
+.delay-7 { animation-delay: .35s; }
+
+/* Gradient text utility */
+.text-gradient-vi {
+  background: linear-gradient(120deg, var(--t1) 30%, var(--vi));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Progress bar shimmer */
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--vi), var(--go));
+  box-shadow: 0 0 8px rgba(26,112,72,.18);
+  transition: width 1.4s cubic-bezier(.4,0,.2,1);
+  animation: bar-grow 1.1s cubic-bezier(.4,0,.2,1) both;
+}

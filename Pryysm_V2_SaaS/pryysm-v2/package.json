@@ -1,0 +1,44 @@
+{
+  "name": "pryysm",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Pryysm — 3D Printing Fleet Management SaaS V2",
+  "scripts": {
+    "dev":          "next dev",
+    "build":        "next build",
+    "start":        "next start",
+    "lint":         "next lint",
+    "type-check":   "tsc --noEmit",
+    "mqtt-bridge":  "ts-node lib/mqtt-client.ts"
+  },
+  "dependencies": {
+    "next":                           "14.2.5",
+    "react":                          "^18.3.1",
+    "react-dom":                      "^18.3.1",
+    "@supabase/supabase-js":          "^2.44.4",
+    "@supabase/auth-helpers-nextjs":  "^0.10.0",
+    "@supabase/ssr":                  "^0.5.1",
+    "mqtt":                           "^5.8.1",
+    "@dnd-kit/core":                  "^6.1.0",
+    "@dnd-kit/sortable":              "^8.0.0",
+    "@dnd-kit/utilities":             "^3.2.2",
+    "lucide-react":                   "^0.400.0",
+    "recharts":                       "^2.12.7",
+    "clsx":                           "^2.1.1",
+    "tailwind-merge":                 "^2.4.0",
+    "date-fns":                       "^3.6.0",
+    "react-dropzone":                 "^14.2.3"
+  },
+  "devDependencies": {
+    "typescript":            "^5.5.3",
+    "@types/node":           "^20.14.11",
+    "@types/react":          "^18.3.3",
+    "@types/react-dom":      "^18.3.0",
+    "tailwindcss":           "^3.4.6",
+    "postcss":               "^8.4.39",
+    "autoprefixer":          "^10.4.19",
+    "eslint":                "^8.57.0",
+    "eslint-config-next":    "14.2.5",
+    "ts-node":               "^10.9.2"
+  }
+}
